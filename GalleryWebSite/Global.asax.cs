@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
@@ -31,12 +32,13 @@ namespace GalleryWebSite
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            Exception exception = Server.GetLastError();
-            if (exception != null)
+            string pathTrace = ConfigurationManager.AppSettings.Get("TraceFilePath");
+            if (!string.IsNullOrEmpty(pathTrace))
             {
-                //string path = HttpRuntime.AppDomainAppPath + "bin\\Content\\Trace\\Trace.txt";
-                string path = @"d:\DZHosts\LocalUser\lejo555\www.danielasgallery.somee.com\bin\Content\Trace\Trace.txt";
-                string[] contents = {
+                Exception exception = Server.GetLastError();
+                if (exception != null)
+                {
+                    string[] contents = {
                     "----------------------",
                     "Error Details:",
                     string.Format("Time: {0}",DateTime.Now.ToString()),
@@ -44,8 +46,10 @@ namespace GalleryWebSite
                     string.Format("Stack: {0}",exception.StackTrace),
                     "----------------------"
                 };
-                File.WriteAllLines(path, contents);
+                    File.AppendAllLines(pathTrace, contents);
+                }
             }
+
         }
 
     }
