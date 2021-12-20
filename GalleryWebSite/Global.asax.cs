@@ -34,7 +34,7 @@ namespace GalleryWebSite
             Exception exception = Server.GetLastError();
             if (exception != null)
             {
-                string path = HttpRuntime.AppDomainAppPath + "bin\\Contents\\Trace\\Trace.txt";
+                string path = HttpRuntime.AppDomainAppPath + "bin\\Content\\Trace\\Trace.txt";
                 string[] contents = {
                     "----------------------",
                     "Error Details:",
