@@ -1,0 +1,316 @@
+﻿body {
+    margin: 0px;
+    background: rgba(255, 255, 255, 1);
+    background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(196,209,217,1) 8%, rgba(233,238,241,1) 49%, rgba(251,253,254,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(8%, rgba(196,209,217,1)), color-stop(49%, rgba(233,238,241,1)), color-stop(100%, rgba(251,253,254,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(196,209,217,1) 8%, rgba(233,238,241,1) 49%, rgba(251,253,254,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(196,209,217,1) 8%, rgba(233,238,241,1) 49%, rgba(251,253,254,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(196,209,217,1) 8%, rgba(233,238,241,1) 49%, rgba(251,253,254,1) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(196,209,217,1) 8%, rgba(233,238,241,1) 49%, rgba(251,253,254,1) 100%);
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*------Fonts------*/
+
+@font-face {
+    font-family: 'Yoav';
+    src: url('../Fonts/YOAVCRG_.TTF');
+}
+
+@font-face {
+    font-family: 'Anarchy';
+    src: url('../Fonts/ANARRG__.TTF');
+}
+
+
+
+/*------Date And Location------*/
+
+#dateLocationDiv {
+    text-align: right;
+    margin: 3px 3px 20px 3px;
+    direction: rtl;
+}
+
+#dateDiv, #locationDiv {
+    display: inline;
+    font-size: 12px;
+}
+
+#dateDiv {
+    width: 40%;
+}
+
+#dateLocationDiv::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#locationDiv {
+    width: 60%;
+}
+
+#locationSpan1 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#locationSpan2 {
+    font-style: italic;
+}
+
+/*------Navigation Bar------*/
+
+#primary_nav_wrap {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: table;
+    cursor: pointer; /* for ios use*/
+    transition: margin-bottom 1s;
+}
+
+    #primary_nav_wrap ul {
+        list-style: none;
+        position: relative;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+
+        #primary_nav_wrap ul a {
+            display: block;
+            color: rgba(6, 32, 241, 0.8);
+            text-decoration: none;
+            /* font-weight: bold; */
+            font-size: large;
+            line-height: 32px;
+            padding: 0 15px;
+            font-family: Yoav, Arial;
+        }
+
+        /*#primary_nav_wrap > ul > li > a {
+        border-left: 1px solid;
+    }
+
+    #primary_nav_wrap > ul > li:first-child > a {
+        border-left: none;
+    }*/
+
+        #primary_nav_wrap ul li {
+            position: relative;
+            float: left;
+            margin: 0;
+            padding: 0;
+            cursor: pointer; /* for ios use*/
+        }
+
+            #primary_nav_wrap ul li.current-menu-item {
+                border-radius: 5px;
+                border: 1px double rgba(196, 209, 217, 1);
+            }
+
+            #primary_nav_wrap ul li li a {
+                cursor: pointer; /* for ios use*/
+            }
+
+                #primary_nav_wrap ul li li a:hover {
+                    background-color: rgba(196, 209, 217, 0.2);
+                    font-size: large;
+                    border-radius: 10px;
+                    padding-right: 25px;
+                    color: white;
+                }
+
+        /* #primary_nav_wrap ul li li a:link {
+    background-color:transparent;
+} */
+
+        #primary_nav_wrap ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 5px;
+        }
+
+            #primary_nav_wrap ul ul li {
+                float: none;
+                width: 105px;
+                text-align: right;
+            }
+
+            #primary_nav_wrap ul ul a {
+                line-height: 120%;
+                padding: 10px 15px;
+                direction: rtl;
+            }
+
+        #primary_nav_wrap ul li:hover > ul {
+            display: block;
+        }
+
+.bm-nav {
+    margin-bottom: 120px !important;
+}
+
+/*------Header + Logo------*/
+
+#logo {
+    width: 600px;
+    margin: auto;
+    display: block;
+    padding-bottom: 25px;
+}
+
+/*------Layout Content------*/
+
+#POADiv {
+    /*height: 535px;
+    width: 1300px;
+    margin: auto;*/
+}
+
+
+/*------Footer------*/
+
+footer {
+    direction: ltr;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(219, 219, 219);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(219, 219, 219);
+    background-color: #565454;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: white;
+    /*width: 1325px;*/
+    text-align: center;
+}
+
+.span-left {
+    padding-right: 80px;
+}
+
+.span-right {
+    padding-left: 80px;
+}
+
+
+
+/* ---------Media Queries---------- */
+
+/*------------------------------------------*/
+/*-------- Between 480px and 800px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:480px) and (max-width:800px) {
+    /*------Date And Location------*/
+    #dateLocationDiv {
+        text-align: right;
+        margin: 3px 3px 20px 3px;
+        direction: rtl;
+    }
+
+    #dateDiv, #locationDiv {
+        width: 50%;
+    }
+
+    #sepSpan {
+        display: none;
+    }
+
+    #dateDiv {
+        float: right;
+    }
+
+    #locationDiv {
+        float: left;
+        text-align: left;
+    }
+    /*------Navigation Bar------*/
+    /*------Header------*/
+    #logo {
+        max-width: 90%;
+        max-height: 100%;
+    }
+    /*------Footer------*/
+    footer {
+        font-size: 11px;
+    }
+
+    .span-left {
+        padding-right: 10px;
+    }
+
+    .span-right {
+        padding-left: 10px;
+    }
+
+    .span-left {
+        border-right: 1px solid;
+    }
+}
+
+/*------------------------------------------*/
+/*-------- Between 320px and 480px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+    /*------Date And Location------*/
+    #dateDiv, #locationDiv {
+        font-size: 10px;
+    }
+
+    #sepSpan {
+        display: none;
+    }
+
+    #dateDiv {
+        float: right;
+    }
+
+    #locationDiv {
+        float: right;
+        text-align: left;
+    }
+    /*------Navigation Bar------*/
+    .bm-nav {
+        margin-bottom: 80px !important;
+    }
+
+    #primary_nav_wrap ul a {
+        font-size: small;
+        line-height: 16px;
+    }
+
+    #primary_nav_wrap ul ul a {
+        padding: 5px 45px;
+    }
+
+    #primary_nav_wrap ul li ul li a:hover {
+        font-size: smaller;
+    }
+    /*------Header------*/
+    #logo {
+        max-width: 90%;
+        max-height: 100%;
+    }
+    /*------Footer------*/
+    .span-left, .span-right {
+        display: block;
+        font-size: 12px;
+        padding: 5px 0px 0px 0px;
+    }
+
+    .span-left {
+        border-bottom: 1px solid;
+    }
+}

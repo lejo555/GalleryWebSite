@@ -1,0 +1,62 @@
+﻿@model IEnumerable<GalleryWebSite.Models.BO.PieceOfArt>
+<link href="~/Content/CSS/listOfPoa.css" rel="stylesheet" />
+
+@foreach (GalleryWebSite.Models.BO.PieceOfArt item in Model)
+{
+    <div class="img-container">
+        <div>
+            @Html.DisplayFor(modelItem => item.Name)
+        </div>
+        <img src="@Url.Content(item.POAPath)" />
+        <div id="moreInfoDiv">
+            <a href="javascript:ImgDivJsFunc('resize','@string.Concat(Url.Content(item.POAPath),";",item.Name)' )">הגדל תמונה</a>
+
+            @if (item.Perspectives.Count == 0)
+            {
+                <a class="deactivatedLink">אין זוויות צפייה נוספות</a>
+            }
+            else
+            {
+                string jsLink = item.Perspectives.Count.ToString() + " " +
+                "זוויות צפייה נוספות";
+                <a href="javascript:ImgDivJsFunc('perspectives','@string.Concat(item.CN.ToString(),";",item.Name)')">
+                    @jsLink
+                </a>
+            }
+            <a href="javascript:ImgDivJsFunc('misc','@item.CN')">פרטים נוספים</a>
+        </div>
+    </div>
+}
+
+
+@*-----------------------------*@
+<div id="resizeDiv">
+    <img id="resizeImg" src="" />
+
+</div>
+@*-----------------------------*@
+<div id="miscDiv">
+    <img id="miscImg" src="" />
+    <div>
+        <span class="staticSpan">מספר קטלוגי:  </span><span id="catNum" class="infoSpan"></span>
+    </div>
+    <div>
+        <span class="staticSpan">קטגוריה/תת קטגוריה:  </span><span id="type" class="infoSpan"></span>
+    </div>
+    <div id="purchaseLinkDiv">
+        <a id="purchaseLink" href="#"></a>
+    </div>
+
+    @*<div>
+            <span class="staticSpan">שם היצירה:  </span><span id="name" class="infoSpan"></span>
+        </div>
+        <div>
+            <span class="staticSpan">גודל:  </span><span id="size" class="infoSpan"></span>
+        </div>
+        <div>
+            <span class="staticSpan">תיאור:  </span><span id="desc" class="infoSpan"></span>
+        </div>*@
+</div>
+@*-----------------------------*@
+<div id="perspectivesDiv">
+</div>

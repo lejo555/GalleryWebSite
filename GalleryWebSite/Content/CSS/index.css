@@ -1,0 +1,178 @@
+﻿#container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 150px;
+}
+
+    #container img {
+        border: 1px solid #e1f3f3;
+        border-radius: 15px;
+        width: 200px;
+        height: 200px;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+
+#mainContentDiv {
+    direction: rtl;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+#contentDiv {
+    order: 2;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#imgDiv1 {
+    order: 1;
+}
+
+#imgDiv2 {
+    order: 3;
+}
+
+/*content styling*/
+
+.welcomeSpan, .subWelcomeSpan {
+    color: #000066;
+    padding-bottom: 3px;
+    display: block;
+}
+
+.welcomeSpan {
+    font-family: Anarchy;
+    font-size: 30px;
+}
+
+.subWelcomeSpan {
+    font-family: Yoav;
+    font-size: 25px;
+}
+
+#quoteDiv {
+    direction: rtl;
+    text-align: right;
+}
+
+.qouteSpan, .qouteNameSpan {
+    display: block;
+    padding-bottom: 1px;
+}
+
+.qouteSpan {
+    font-family: Tahoma;
+    font-style: italic;
+    color: #1fbfba;
+    font-size: 13px;
+}
+
+.qouteNameSpan {
+    font-family: Tahoma;
+    font-size: 10px;
+    margin-right: 25%;
+    color: #000066;
+}
+
+/* ---------Media Queries---------- */
+
+/*------------------------------------------*/
+/*-------- Between 480px and 800px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:480px) and (max-width:800px) {
+
+    #container {
+        display: block;
+        width: 100%;
+    }
+
+        #container:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+    #mainContentDiv {
+        width: 100%;
+        order: unset;
+        padding-bottom: 50px;
+    }
+
+    #imgDiv1, #imgDiv2 {
+        width: 48%;
+        float: left;
+        order: unset;
+        margin: 1%;
+    }
+
+    #imgDiv2 {
+        text-align: right;
+    }
+
+    #container img {
+        width: 110px;
+        height: 110px;
+        display: inline;
+    }
+
+    .welcomeSpan {
+        font-size: 25px;
+    }
+
+    .subWelcomeSpan {
+        font-size: 20px;
+    }
+}
+
+/*------------------------------------------*/
+/*-------- Between 320px and 480px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+    #container {
+        display: block;
+        width: 100%;
+    }
+
+        #container:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+    #mainContentDiv {
+        width: 100%;
+        order: unset;
+        padding-bottom: 50px;
+    }
+
+    #imgDiv1, #imgDiv2 {
+        width: 48%;
+        float: left;
+        order: unset;
+        margin: 1%;
+    }
+
+    #imgDiv2 {
+        text-align: right;
+    }
+
+    #container img {
+        width: 70px;
+        height: 70px;
+        display: inline;
+    }
+
+    .welcomeSpan {
+        font-size: 25px;
+    }
+
+    .subWelcomeSpan {
+        font-size: 20px;
+    }
+}
+}

@@ -1,0 +1,241 @@
+﻿#poaLinksDiv {
+    text-align: center;
+    font-size: x-large;
+    color: #0094ff;
+}
+
+.spanShow:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.spanShow, .currentCat {
+    border-right: 2px solid #0094ff;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#poaLinksDiv .spanShow:nth-child(1) {
+    border-right: none;
+}
+
+#poaLinksDiv .currentCat:nth-child(1) {
+    border-right: none;
+}
+
+.spanShow {
+    font-family: Yoav;
+}
+
+.currentCat {
+    font-family: Yoav;
+    color: #0a2aa8;
+    font-weight: bold;
+    cursor: default;
+}
+
+
+/*----------- Resize Modal Div ---------------*/
+#resizeDiv {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    box-shadow: 2px 3px 130px 0px rgba(255,255,255,1);
+}
+
+#resizeImg {
+    height: 500px;
+    width: 550px;
+    border-style: none;
+}
+
+
+
+/*----------- Perspectives Modal Div ---------------*/
+
+#perspectivesDiv {
+    display: none;
+    box-shadow: 2px 3px 130px 0px rgba(255,255,255,1);
+}
+
+#mainPersImage {
+    width: 300px;
+    height: 300px;
+}
+
+.trioImageCollection > img {
+    width: 92px;
+    height: 92px;
+    border: 2px solid grey;
+}
+
+    .trioImageCollection > img:nth-child(2) {
+        margin-right: 6px;
+        margin-left: 6px;
+    }
+
+    .trioImageCollection > img:hover {
+        cursor: pointer;
+        border-color: #0094ff;
+    }
+
+
+/*----------- Misc Modal Div ---------------*/
+#miscDiv {
+    display: none;
+    box-shadow: 2px 3px 130px 0px rgba(255,255,255,1);
+    direction: rtl;
+}
+
+    #miscDiv img {
+        width: 450px;
+        height: 450px;
+    }
+
+.staticSpan {
+    color: rgba(12, 13, 67, 0.95);
+    font-weight: bold;
+}
+
+.noPurchaseLink {
+    color: red !important;
+}
+
+#purchaseLink {
+    font-weight: bold;
+    color: rgba(12, 13, 67, 0.95);
+}
+
+#purchaseLinkDiv {
+    text-align: center;
+    margin-top: 5px;
+}
+/*-------jquery ui overridings------*/
+.ui-widget-overlay {
+    background-color: black;
+    background-image: none;
+    opacity: 0.9;
+}
+
+
+.ui-dialog .ui-dialog-titlebar-close {
+    border-radius: 10px;
+    margin: -8px 0 0;
+    padding: 1px;
+    position: absolute;
+    right: -10px;
+    top: -10%;
+    z-index: 9999;
+    overflow: visible;
+    border-color: #282e32;
+}
+
+.ui-widget-header {
+    border: none;
+    background-color: whitesmoke;
+}
+
+.ui-dialog .ui-dialog-titlebar button.ui-button:focus,
+.ui-dialog .ui-dialog-titlebar button.ui-button.ui-state-focus,
+.ui-dialog .ui-dialog-titlebar button.ui-button.ui-state-active,
+.ui-dialog .ui-dialog-titlebar button.ui-button.ui-state-hover {
+    outline: none;
+}
+
+
+div[role=dialog][ aria-describedby=miscDiv] {
+    width: 500px !important;
+    height: 600px !important;
+}
+
+div[role=dialog][ aria-describedby=resizeDiv] {
+    width: 600px !important;
+    height: 560px !important;
+}
+
+div[role=dialog][ aria-describedby=perspectivesDiv] {
+    width: 400px !important;
+    height: 460px !important;
+}
+
+div[role=dialog] > div > span.ui-dialog-title {
+    text-align: center;
+}
+/* ---------Media Queries---------- */
+
+/*------------------------------------------*/
+/*-------- Between 480px and 800px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:480px) and (max-width:800px) {
+    div[role=dialog][ aria-describedby=miscDiv] {
+        width: 450px !important;
+        height: 575px !important;
+    }
+
+    div[role=dialog][ aria-describedby=resizeDiv] {
+        width: 300px !important;
+        height: 30px !important;
+    }
+
+        div[role=dialog][ aria-describedby=resizeDiv] > div > span.ui-dialog-title {
+            width: 100%;
+            font-size: 80%;
+            text-align: center;
+        }
+
+    #resizeDiv {
+        display: none !important;
+    }
+
+    #miscDiv img {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/*------------------------------------------*/
+/*-------- Between 320px and 480px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+    #poaLinksDiv {
+        font-size: large;
+    }
+
+    #resizeDiv {
+        display: none !important;
+    }
+
+    #perspectivesDiv {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    #miscDiv img {
+        width: 280px;
+        height: 280px;
+    }
+
+    div[role=dialog][ aria-describedby=miscDiv] {
+        width: 300px !important;
+        height: 450px !important;
+    }
+
+    div[role=dialog][ aria-describedby=perspectivesDiv] {
+        width: 300px !important;
+        height: 450px !important;
+    }
+
+    div[role=dialog][ aria-describedby=resizeDiv] {
+        width: 300px !important;
+        height: 30px !important;
+    }
+
+        div[role=dialog][ aria-describedby=resizeDiv] > div > span.ui-dialog-title {
+            width: 100%;
+            font-size: 80%;
+            text-align: center;
+        }
+}

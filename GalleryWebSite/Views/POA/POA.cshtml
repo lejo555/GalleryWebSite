@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GalleryWebSite.Models.BO.PieceOfArt>
+@{
+    switch ((string)ViewBag.vbData)
+    {
+        case "mos":
+            ViewBag.Title = "פסיפס";
+            break;
+        case "sg":
+            ViewBag.Title = "ויטראז'";
+            break;
+        case "fs":
+            ViewBag.Title = "פיוזינג";
+            break;
+        default:
+            ViewBag.Title = "";
+            break;
+    }
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/CSS/poaCSS.css" rel="stylesheet" />
+<script src="~/Content/JS/POAFunctions.js" type="text/javascript"></script>
+
+<div id="poaLinksDiv">
+    <span class="spanShow" data-category="all">כל היצירות</span>
+    <span class="spanShow" data-category="Judaica">יודאיקה</span>
+    <span class="spanShow" data-category="NJudaica">נוי</span>
+</div>
+
+<div id="imgDiv"></div>

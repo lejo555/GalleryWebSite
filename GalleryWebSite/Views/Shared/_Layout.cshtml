@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.title</title>
+
+    <script src="~/Content/JS/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/JS/jquery-ui.min.js"></script>
+
+    <link href="~/Content/CSS/jquery-ui-git.css" rel="stylesheet" />
+    <link href="~/Content/CSS/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/jquery-ui.theme.min.css" rel="stylesheet" />
+
+    @*<script src="~/Content/JS/jquery-ui.js"></script>*@
+    @*<link href="~/Content/CSS/jquery-ui.structure.css" rel="stylesheet" />*@
+    @*<link href="~/Content/CSS/jquery-ui.theme.css" rel="stylesheet" />*@
+
+    <script src='~/Content/JS/HebrewDate.js'></script>
+    <link href="~/Content/CSS/layout.css" rel="stylesheet" media="screen" />
+    <script src="~/Content/JS/JSConsts.js"></script>
+    <script src="~/Content/JS/layout.js"></script>
+    <script>
+        //Hebrew year must be updated in some periods of time - line 177!!!
+        //Temporary Solution!
+        //hebrew characters showed incorrectly inside HeberwDate.js - not solved!!
+
+        function FormatDateH(cDate) {
+            var aDate = new Array()
+            var cFormatDate
+            var dayHeb;
+            var yearHeb;
+
+            aDate = cDate.split("/")
+            switch (Number(aDate[1])) {
+                case 1:
+                    dayHeb = "א";
+                    break;
+                case 2:
+                    dayHeb = "ב";
+                    break;
+                case 3:
+                    dayHeb = "ג";
+                    break;
+                case 4:
+                    dayHeb = "ד";
+                    break;
+                case 5:
+                    dayHeb = "ה";
+                    break;
+                case 6:
+                    dayHeb = "ו";
+                    break;
+                case 7:
+                    dayHeb = "ז";
+                    break;
+                case 8:
+                    dayHeb = "ח";
+                    break;
+                case 9:
+                    dayHeb = "ט";
+                    break;
+                case 10:
+                    dayHeb = "י";
+                    break;
+                case 11:
+                    dayHeb = "י\"א";
+                    break;
+                case 12:
+                    dayHeb = "י\"ב";
+                    break;
+                case 13:
+                    dayHeb = "י\"ג";
+                    break;
+                case 14:
+                    dayHeb = "י\"ד";
+                    break;
+                case 15:
+                    dayHeb = "ט\"ו";
+                    break;
+                case 16:
+                    dayHeb = "ט\"ז";
+                    break;
+                case 17:
+                    dayHeb = "י\"ז";
+                    break;
+                case 18:
+                    dayHeb = "י\"ח";
+                    break;
+                case 19:
+                    dayHeb = "י\"ט";
+                    break;
+                case 20:
+                    dayHeb = "כ";
+                    break;
+                case 21:
+                    dayHeb = "כ\"א";
+                    break;
+                case 22:
+                    dayHeb = "כ\"ב";
+                    break;
+                case 23:
+                    dayHeb = "כ\"ג";
+                    break;
+                case 24:
+                    dayHeb = "כ\"ד";
+                    break;
+                case 25:
+                    dayHeb = "כ\"ה";
+                    break;
+                case 26:
+                    dayHeb = "כ\"ו";
+                    break;
+                case 27:
+                    dayHeb = "כ\"ז";
+                    break;
+                case 28:
+                    dayHeb = "כ\"ח";
+                    break;
+                case 29:
+                    dayHeb = "כ\"ט";
+                    break;
+                case 30:
+                    dayHeb = "ל";
+                    break;
+            }
+
+
+            switch (Number(aDate[0])) {
+                case 1:
+                    cFormatDate = "תשרי"
+                    break
+                case 2:
+                    cFormatDate = "חשוון"
+                    break
+                case 3:
+                    cFormatDate = "כסלו"
+                    break
+                case 4:
+                    cFormatDate = "טבת"
+                    break
+                case 5:
+                    cFormatDate = "שבט"
+                    break
+                case 6:
+                    cFormatDate = "אדר א"
+                    break
+                case 7:
+                    cFormatDate = (IsLeapYear(Number(aDate[2])) ? "אדר ב" : "אדר")
+                    break
+                case 8:
+                    cFormatDate = "ניסן"
+                    break
+                case 9:
+                    cFormatDate = "אייר"
+                    break
+                case 10:
+                    cFormatDate = "סיוון"
+                    break
+                case 11:
+                    cFormatDate = "תמוז"
+                    break
+                case 12:
+                    cFormatDate = "אב"
+                    break
+                case 13:
+                    cFormatDate = "אלול"
+                    break
+            }
+
+            switch (Number(aDate[2])) {
+                case 5779:
+                    yearHeb = "התשע\"ט";
+                    break;
+                case 5780:
+                    yearHeb = "התש\"פ";
+                    break;
+                case 5781:
+                    yearHeb = "התשפ\"א";
+                    break;
+                case 5782:
+                    yearHeb = "התשפ\"ב";
+                    break;
+                case 5783:
+                    yearHeb = "התשפ\"ג";
+                    break;
+                case 5784:
+                    yearHeb = "התשפ\"ד";
+                    break;
+                case 5785:
+                    yearHeb = "התשפ\"ה";
+                    break;
+                case 5786:
+                    yearHeb = "התשפ\"ו";
+                    break;
+                case 5787:
+                    yearHeb = "התשפ\"ז";
+                    break;
+                case 5788:
+                    yearHeb = "התשפ\"ח";
+                    break;
+                case 5789:
+                    yearHeb = "התשפ\"ט";
+                    break;
+            }
+            cFormatDate = dayHeb + " " + cFormatDate + " " + yearHeb
+            return cFormatDate
+        }
+    </script>
+
+</head>
+
+
+
+<body>
+    <input id="vbData" type="hidden" value="@ViewBag.vbData" />
+    <div id="dateLocationDiv">
+        <div id="dateDiv">
+            <span>בס"ד, </span>
+            <span id="date"></span>
+            <span id="sepSpan">
+                <b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>
+            </span>
+        </div>
+
+        <div id="locationDiv">
+            <span id="locationSpan1">מיקומך</span>
+            <span>:</span>
+            <span id="locationSpan2"></span>
+        </div>
+
+    </div>
+
+    <nav id="primary_nav_wrap">
+        <ul>
+            <li id="contactli">
+                <a href="/Home/Contact">צור קשר</a>
+            </li>
+            <li id="galleryli">
+                <a>גלריית תמונות</a>
+                <ul>
+                    <li>
+                        <a href="/POA/MosaicsPOA">פסיפס</a>
+                    </li>
+                    <li>
+                        <a href="/POA/StainGlassPOA">ויטראז'</a>
+                    </li>
+                    <li>
+                        <a href="/POA/FusingPOA">פיוזינג</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="homeli">
+                <a href="/Home/Index">דף הבית</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <img id="logo" src="~/Content/Images/other/logo.png" />
+    </header>
+
+
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <footer>
+        <span class="span-left">KMK Creations. All Rights Reserved © 2018.</span>
+        <span class="span-right" title="Lejo555@gmail.com">Designed and Built by Yehonathan Lellouche</span>
+    </footer>
+
+
+</body>
+</html>

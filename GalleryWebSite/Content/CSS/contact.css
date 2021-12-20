@@ -1,0 +1,195 @@
+﻿
+form {
+    width: 700px;
+    border: 1px solid #ddd;
+    padding: 30px 40px 20px 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 150px;
+    direction: rtl;
+}
+
+#userDetailsDiv, #userMessageDiv {
+    width: 50%;
+}
+
+#userDetailsDiv {
+    float: right;
+}
+
+#userMessageDiv {
+    float: right;
+}
+
+h2 {
+    color: #555;
+    margin: 0 5px 20px 0;
+}
+
+h5 {
+    color: #18a5cc;
+    margin: 0 5px 20px 0;
+}
+
+fieldset {
+    border: none;
+}
+
+label, input {
+    display: block;
+}
+
+input, textarea {
+    padding: 8px;
+    margin: 4px 0 20px 0;
+    background: #fff;
+    font-size: 14px;
+    color: #555;
+    border: 1px #ddd solid;
+    /* -- CSS3 Shadow - create a shadow around each input element -- */
+    box-shadow: 0px 0px 4px #aaa;
+    /* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */
+    transition: background 0.3s linear;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+    /*adds scrollers only if needed unlike 'scroll'*/
+    width: 320px;
+    height: 175px;
+}
+
+label {
+    font-size: 20px;
+    color: #666;
+}
+
+input {
+    width: 220px;
+}
+
+    input:hover, textarea:hover {
+        background: #eee;
+    }
+
+    input[type="submit"]:hover {
+        box-shadow: 0px 0px 20px #555;
+        cursor: pointer;
+    }
+
+    input[type="submit"] {
+        margin-right: 30%;
+        width: 150px;
+        color: #eee;
+        margin-top: 10px;
+        background-color: #18a5cc;
+        border: none;
+        /* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
+        transition: box-shadow 0.3s linear;
+        /* -- CSS3 - Rounded Corners -- */
+        border-radius: 4px;
+        /* -- CSS3 Shadow - create a shadow around each input element -- */
+        background: linear-gradient(linear, 0% 0%, 0% 100%, from(#18a5cc), to(#0a85a8));
+    }
+
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+textarea.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    border-top: 1px dashed orangered;
+}
+
+#meDiv {
+    margin: 10px;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+#messageSpan {
+    color: dodgerblue;
+}
+
+/* ---------Media Queries---------- */
+
+/*------------------------------------------*/
+/*-------- Between 480px and 800px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:480px) and (max-width:800px) {
+    form {
+        width: 400px;
+        padding: 30px 0px 20px 0px;
+    }
+
+    #userDetailsDiv, #userMessageDiv {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+}
+
+/*------------------------------------------*/
+/*-------- Between 320px and 480px  --------*/
+/*------------------------------------------*/
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+    form {
+        width: 310px;
+        padding: 30px 0px 20px 0px;
+    }
+
+    #userDetailsDiv, #userMessageDiv {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+
+    input, textarea {
+        padding: 8px;
+        margin: 4px 0 20px 0;
+        font-size: 11px;
+    }
+
+    textarea {
+        width: 265px;
+        height: 175px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    input {
+        width: 220px;
+    }
+
+        input[type="submit"] {
+            width: 100px;
+            margin-right: 30%;
+        }
+}

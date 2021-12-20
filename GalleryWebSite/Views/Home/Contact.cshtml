@@ -1,0 +1,82 @@
+﻿@model GalleryWebSite.Models.BO.Contact
+@{
+    ViewBag.Title = "צור קשר";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/CSS/contact.css" rel="stylesheet" />
+
+@*// for testing
+    //$("#Name").val("יהונתן ללוש");
+    //$("#Email").val("lejo555@gmail.com");
+    //$("#Mobile").val("0528358718");
+    //$("#Message").val("הודעת ניסיון");*@
+
+@{
+    if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+    {
+        <script>
+            $("document").ready(function () {
+                $('html,body').animate({
+                    scrollTop: ($('#meDiv').offset().top)
+                }, 500);
+            });
+        </script>
+        if ((string)ViewBag.SuccessMessage == "success")
+        {
+            <script>
+                $("document").ready(function () {
+                    $("#messageSpan").text(CNT_SENT_SUCCESSFULLY);
+                    $("#messageSpan").fadeOut(10000);
+                });
+            </script>
+        }
+    }
+}
+
+<div>
+    <form action="/Home/Contact" method="post">
+        <h2>צרו איתנו קשר...</h2>
+        <h5>לשם יצירת קשר, נא להזין לפחות אחד מהשלושה: דואר אלקטרוני, טלפון או טלפון נייד.</h5>
+        <fieldset>
+            <div id="userDetailsDiv">
+                <div>
+                    <label for="Name">שם:</label>
+                    @Html.EditorFor(model => model.Name, null)
+                    @Html.ValidationMessageFor(model => model.Name, " ")
+                </div>
+
+                <div>
+                    <label for="Email">דואר אלקטרוני:</label>
+                    @Html.EditorFor(model => model.Email, null)
+                    @Html.ValidationMessageFor(model => model.Email, " ")
+                </div>
+
+                <div>
+                    <label for="Phone">טלפון:</label>
+                    @Html.EditorFor(model => model.Phone, null)
+                    @Html.ValidationMessageFor(model => model.Phone, " ")
+                </div>
+
+                <div>
+                    <label for="Mobile">טלפון נייד:</label>
+                    @Html.EditorFor(model => model.Mobile, null)
+                    @Html.ValidationMessageFor(model => model.Mobile, " ")
+                </div>
+
+            </div>
+            <div id="userMessageDiv">
+                <label for="Message">פרטי הודעה:</label>
+                @Html.TextAreaFor(model => model.Message)
+                @Html.ValidationMessageFor(model => model.Message, " ")
+                <input type="submit" value="שלח הודעה" name="submit" />
+            </div>
+        </fieldset>
+
+        <div id="meDiv">
+            @Html.ValidationSummary(false)
+            <span id="messageSpan">
+            </span>
+        </div>
+    </form>
+
+</div>

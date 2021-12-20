@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/packages
+/GalleryWebSite.v12.suo
+/GalleryWebSite/bin
+/GalleryWebSite/obj
+/GalleryWebSite/Properties
