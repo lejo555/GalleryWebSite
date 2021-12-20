@@ -215,7 +215,6 @@
     <Content Include="Content\JS\JSConsts.js" />
     <Content Include="Content\JS\layout.js" />
     <Content Include="Content\JS\POAFunctions.js" />
-    <Content Include="Content\SQL\DBScript.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Trace\Trace.txt">
@@ -256,7 +255,6 @@
     <Content Include="Content\Fonts\X_YOCRG_.TTF" />
     <Content Include="Content\Fonts\YOAVCB__.TTF" />
     <Content Include="Content\Fonts\YOAVCRG_.TTF" />
-    <Content Include="Content\Images\CategoriesSymbols.xlsx" />
     <None Include="Properties\PublishProfiles\FileSystemPublishProfile.pubxml" />
     <Content Include="Views\POA\POA.cshtml" />
   </ItemGroup>
