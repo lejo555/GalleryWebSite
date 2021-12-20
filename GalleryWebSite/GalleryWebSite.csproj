@@ -218,7 +218,7 @@
     <Content Include="Content\SQL\DBScript.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Trace.txt">
+    <Content Include="Content\Trace\Trace.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Web.config">

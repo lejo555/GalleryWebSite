@@ -16,6 +16,8 @@ namespace GalleryWebSite
     {
         protected void Application_Start()
         {
+            var a = 0;
+            var b = 1 / a;
             Database.SetInitializer<GalleryDBContext>(new CreateDatabaseIfNotExists<GalleryDBContext>());
 
             using (var context = new GalleryDBContext())
@@ -34,7 +36,7 @@ namespace GalleryWebSite
             Exception exception = Server.GetLastError();
             if (exception != null)
             {
-                string path = Path.Combine(Directory.GetCurrentDirectory(), "\\Trace.txt");
+                string path = HttpRuntime.AppDomainAppPath + "bin\\Trace.txt";
                 string[] contents = {
                     "----------------------",
                     "Error Details:",
