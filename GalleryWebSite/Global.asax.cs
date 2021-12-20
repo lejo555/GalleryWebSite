@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -27,5 +28,24 @@ namespace GalleryWebSite
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exception = Server.GetLastError();
+            if (exception != null)
+            {
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "\\Trace.txt");
+                string[] contents = {
+                    "----------------------",
+                    "Error Details:",
+                    string.Format("Time: {0}",DateTime.Now.ToString()),
+                    string.Format("Message: {0}",exception.Message),
+                    string.Format("Stack: {0}",exception.StackTrace),
+                    "----------------------"
+                };
+                File.WriteAllLines(path, contents);
+            }
+        }
+
     }
 }
