@@ -16,7 +16,7 @@ namespace GalleryWebSite.Controllers
         public ActionResult MosaicsPOA()
         {
             ViewBag.vbData = "mos";
-            return View("POA");
+            return View("POA"); 
         }
 
         public ActionResult StainGlassPOA()
