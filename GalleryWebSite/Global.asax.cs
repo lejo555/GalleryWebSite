@@ -18,7 +18,6 @@ namespace GalleryWebSite
         protected void Application_Start()
         {
             Database.SetInitializer<GalleryDBContext>(new CreateDatabaseIfNotExists<GalleryDBContext>());
-
             using (var context = new GalleryDBContext())
             {
                 context.Database.Initialize(false);
